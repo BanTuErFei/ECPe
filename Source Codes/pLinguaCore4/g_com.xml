@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--File generated with P-Lingua Compiler 1.0 beta
+See http://www.gcn.us.es for more information.-->
+<cell_like_psystem version="1.0" model="evolution_communication">
+  <init_config>
+    <membrane label="1">
+      <multiset>
+        <object name="bad" />
+        <object name="ab" multiplicity="2" />
+      </multiset>
+      <membrane label="2">
+        <multiset>
+          <object name="fg" />
+          <object name="ab" />
+        </multiset>
+        <membrane label="3">
+          <multiset>
+            <object name="bad" />
+            <object name="c" />
+          </multiset>
+          <membrane label="4">
+            <multiset>
+              <object name="ab" />
+              <object name="s" />
+              <object name="c" />
+            </multiset>
+          </membrane>
+        </membrane>
+      </membrane>
+    </membrane>
+  </init_config>
+  <rules>
+    <rule>
+      <left_hand_rule>
+        <outer_membrane label="1" energy="0">
+          <multiset>
+            <object name="bad" />
+          </multiset>
+        </outer_membrane>
+      </left_hand_rule>
+      <right_hand_rule>
+        <outer_membrane label="1" energy="1">
+          <multiset>
+            <object name="cd" />
+          </multiset>
+        </outer_membrane>
+      </right_hand_rule>
+    </rule>
+    <rule>
+      <left_hand_rule>
+        <outer_membrane label="1" energy="0">
+          <multiset>
+            <object name="ab" />
+          </multiset>
+        </outer_membrane>
+      </left_hand_rule>
+      <right_hand_rule>
+        <outer_membrane label="1" energy="1">
+          <multiset>
+            <object name="fg" />
+          </multiset>
+        </outer_membrane>
+      </right_hand_rule>
+    </rule>
+    <rule>
+      <left_hand_rule>
+        <multiset>
+          <object name="cd" />
+        </multiset>
+        <outer_membrane label="2" energy="4" />
+      </left_hand_rule>
+      <right_hand_rule>
+        <outer_membrane label="2" energy="0">
+          <multiset>
+            <object name="cd" />
+          </multiset>
+        </outer_membrane>
+      </right_hand_rule>
+    </rule>
+    <rule>
+      <left_hand_rule>
+        <multiset>
+          <object name="fg" />
+        </multiset>
+        <outer_membrane label="3" energy="2" />
+      </left_hand_rule>
+      <right_hand_rule>
+        <outer_membrane label="3" energy="0">
+          <multiset>
+            <object name="fg" />
+          </multiset>
+        </outer_membrane>
+      </right_hand_rule>
+    </rule>
+    <rule>
+      <left_hand_rule>
+        <outer_membrane label="3" energy="0">
+          <multiset>
+            <object name="ab" />
+          </multiset>
+        </outer_membrane>
+      </left_hand_rule>
+      <right_hand_rule>
+        <outer_membrane label="3" energy="3">
+          <multiset>
+            <object name="fg" />
+          </multiset>
+        </outer_membrane>
+      </right_hand_rule>
+    </rule>
+    <rule>
+      <left_hand_rule>
+        <multiset>
+          <object name="c" />
+        </multiset>
+        <outer_membrane label="3" energy="2">
+          <multiset>
+            <object name="s" />
+          </multiset>
+        </outer_membrane>
+      </left_hand_rule>
+      <right_hand_rule>
+        <multiset>
+          <object name="s" />
+        </multiset>
+        <outer_membrane label="3" energy="1">
+          <multiset>
+            <object name="c" />
+          </multiset>
+        </outer_membrane>
+      </right_hand_rule>
+    </rule>
+    <rule>
+      <left_hand_rule>
+        <outer_membrane label="3" energy="0">
+          <multiset>
+            <object name="bad" />
+          </multiset>
+        </outer_membrane>
+      </left_hand_rule>
+      <right_hand_rule>
+        <outer_membrane label="3" energy="3">
+          <multiset>
+            <object name="s" />
+          </multiset>
+        </outer_membrane>
+      </right_hand_rule>
+    </rule>
+    <rule>
+      <left_hand_rule>
+        <outer_membrane label="4" energy="0">
+          <multiset>
+            <object name="s" />
+          </multiset>
+        </outer_membrane>
+      </left_hand_rule>
+      <right_hand_rule>
+        <outer_membrane label="4" energy="5">
+          <multiset>
+            <object name="bd" />
+          </multiset>
+        </outer_membrane>
+      </right_hand_rule>
+    </rule>
+    <rule>
+      <left_hand_rule>
+        <outer_membrane label="4" energy="1">
+          <multiset>
+            <object name="bd" />
+          </multiset>
+        </outer_membrane>
+      </left_hand_rule>
+      <right_hand_rule>
+        <multiset>
+          <object name="bd" />
+        </multiset>
+        <outer_membrane label="4" energy="0" />
+      </right_hand_rule>
+    </rule>
+  </rules>
+</cell_like_psystem>
+

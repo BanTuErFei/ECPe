@@ -1,0 +1,27 @@
+@model<evolution_communication>
+def SAMP() {
+@mu = [ [ ]'2]'1;
+@ms(2) = a,ap,c;
+@ms(1) = b,bp;
+
+[app]'2 --> [dd]$1;
+bpp[app]'2$1--> app[bpp]$1;
+
+[ap]'2 --> [app]$1;
+[bp]'1 --> [bpp]$1;
+
+/*[a]'2$1 --> a[]$0;*/
+
+[c]'2 --> [c]$0;
+
+
+
+
+
+
+
+}
+
+def main(){
+	call SAMP();
+}
