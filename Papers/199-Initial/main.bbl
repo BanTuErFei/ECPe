@@ -1,0 +1,19 @@
+\begin{thebibliography}{1}
+
+\bibitem{p-system}
+P\u{a}un, G.:
+\newblock Introduction to membrane computing.
+\newblock Springer (2006)
+
+\bibitem{ecpe_no-antiport}
+Juayong, R. A.~B., e.a.:
+\newblock On the simulations of evolution-communication p systems with energy
+  without antiport rules for gpus.
+\newblock 10th Brainstorming Week on Membrane Computing Proceeding (2012)
+  267--289
+
+\bibitem{psystem-website}
+:
+\newblock The p system website
+
+\end{thebibliography}
