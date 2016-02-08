@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--File generated with P-Lingua Compiler 1.0 beta
+See http://www.gcn.us.es for more information.-->
+<cell_like_psystem version="1.0" model="evolution_communication">
+  <init_config>
+    <membrane label="1">
+      <multiset>
+        <object name="&lt;bad&gt;" />
+        <object name="&lt;ab&gt;" multiplicity="2" />
+      </multiset>
+      <membrane label="2">
+        <multiset>
+          <object name="&lt;fg&gt;" />
+          <object name="&lt;ab&gt;" />
+        </multiset>
+        <membrane label="3">
+          <multiset>
+            <object name="&lt;bad&gt;" />
+            <object name="&lt;c&gt;" />
+          </multiset>
+          <membrane label="4">
+            <multiset>
+              <object name="&lt;ab&gt;" />
+              <object name="&lt;s&gt;" />
+              <object name="&lt;c&gt;" />
+            </multiset>
+          </membrane>
+        </membrane>
+      </membrane>
+    </membrane>
+  </init_config>
+  <rules>
+    <rule>
+      <left_hand_rule>
+        <outer_membrane label="1">
+          <multiset>
+            <object name="&lt;bad&gt;" />
+          </multiset>
+        </outer_membrane>
+      </left_hand_rule>
+      <right_hand_rule>
+        <outer_membrane label="1">
+          <multiset>
+            <object name="&lt;cd&gt;" />
+            <object name="&lt;e&gt;" />
+          </multiset>
+        </outer_membrane>
+      </right_hand_rule>
+    </rule>
+    <rule>
+      <left_hand_rule>
+        <outer_membrane label="1">
+          <multiset>
+            <object name="&lt;ab&gt;" />
+          </multiset>
+        </outer_membrane>
+      </left_hand_rule>
+      <right_hand_rule>
+        <outer_membrane label="1">
+          <multiset>
+            <object name="&lt;fg&gt;" />
+            <object name="&lt;e&gt;" />
+          </multiset>
+        </outer_membrane>
+      </right_hand_rule>
+    </rule>
+    <rule>
+      <left_hand_rule>
+        <multiset>
+          <object name="&lt;cd&gt;" />
+          <object name="&lt;e&gt;" />
+        </multiset>
+        <outer_membrane label="2" />
+      </left_hand_rule>
+      <right_hand_rule>
+        <outer_membrane label="2">
+          <multiset>
+            <object name="&lt;cd&gt;" />
+          </multiset>
+        </outer_membrane>
+      </right_hand_rule>
+    </rule>
+    <rule>
+      <left_hand_rule>
+        <multiset>
+          <object name="&lt;fg&gt;" />
+          <object name="&lt;e&gt;" />
+        </multiset>
+        <outer_membrane label="3" />
+      </left_hand_rule>
+      <right_hand_rule>
+        <outer_membrane label="3">
+          <multiset>
+            <object name="&lt;fg&gt;" />
+          </multiset>
+        </outer_membrane>
+      </right_hand_rule>
+    </rule>
+    <rule>
+      <left_hand_rule>
+        <outer_membrane label="3">
+          <multiset>
+            <object name="&lt;ab&gt;" />
+          </multiset>
+        </outer_membrane>
+      </left_hand_rule>
+      <right_hand_rule>
+        <outer_membrane label="3">
+          <multiset>
+            <object name="&lt;fg&gt;" />
+            <object name="&lt;e&gt;" />
+          </multiset>
+        </outer_membrane>
+      </right_hand_rule>
+    </rule>
+    <rule>
+      <left_hand_rule>
+        <multiset>
+          <object name="&lt;c&gt;" />
+          <object name="&lt;e&gt;" />
+        </multiset>
+        <outer_membrane label="3">
+          <multiset>
+            <object name="&lt;s&gt;" />
+            <object name="&lt;e&gt;" />
+          </multiset>
+        </outer_membrane>
+      </left_hand_rule>
+      <right_hand_rule>
+        <multiset>
+          <object name="&lt;s&gt;" />
+        </multiset>
+        <outer_membrane label="3">
+          <multiset>
+            <object name="&lt;c&gt;" />
+          </multiset>
+        </outer_membrane>
+      </right_hand_rule>
+    </rule>
+    <rule>
+      <left_hand_rule>
+        <outer_membrane label="3">
+          <multiset>
+            <object name="&lt;bad&gt;" />
+          </multiset>
+        </outer_membrane>
+      </left_hand_rule>
+      <right_hand_rule>
+        <outer_membrane label="3">
+          <multiset>
+            <object name="&lt;s&gt;" />
+            <object name="&lt;e&gt;" />
+          </multiset>
+        </outer_membrane>
+      </right_hand_rule>
+    </rule>
+    <rule>
+      <left_hand_rule>
+        <outer_membrane label="4">
+          <multiset>
+            <object name="&lt;ab&gt;" />
+            <object name="&lt;e&gt;" />
+          </multiset>
+        </outer_membrane>
+      </left_hand_rule>
+      <right_hand_rule>
+        <multiset>
+          <object name="&lt;ab&gt;" />
+        </multiset>
+        <outer_membrane label="4" />
+      </right_hand_rule>
+    </rule>
+  </rules>
+</cell_like_psystem>
+

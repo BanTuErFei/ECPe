@@ -1,0 +1,23 @@
+/*This one test non-determinism on evolutions*/
+
+@model<evolution_communication>
+
+def main(){
+	@mu = [ []'2 [[]'4]'3 ]'1;
+
+	[a]'1 --> [ap]$2;
+	[b]'2 --> [bp]$2;
+	[c]'3 --> [cp]$3;
+	[d]'4 --> [dp]$4;
+
+	/*Evolution and evolution*/
+
+	/*Evolution and send-in*/
+	[cp]'3 --> [cpp]$1;
+	cp[]'4$2 --> [cp];
+
+	/*Evolution and send-out*/
+	[ap]'1 --> [app]$3;
+	[ap]'1$1 --> ap[];
+
+}

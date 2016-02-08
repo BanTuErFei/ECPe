@@ -1,0 +1,17 @@
+/*Test for nondeterminism*/
+
+@model<evolution_communication>
+
+def main(){
+
+@mu = [[]'2]'1;
+@ms(1) = a;
+@ms(2) = b;
+
+[a]'1 --> [ap]$2;
+[b]'2 --> [bp]$1;
+
+ap[bp]'2$1,$1 --> bp[ap];
+
+
+}

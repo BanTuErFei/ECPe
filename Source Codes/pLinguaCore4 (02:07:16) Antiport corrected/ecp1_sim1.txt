@@ -1,0 +1,98 @@
+
+***********************************************
+
+    CONFIGURATION: 0
+    TIME: 0.0 s.
+    MEMORY USED: 62976
+    FREE MEMORY: 57060
+    TOTAL MEMORY: 932352
+
+    MEMBRANE ID: 3, Label: 4, Charge: 0
+    Multiset: <ab>, <s>, <c>
+    Parent membrane ID: 2
+
+    MEMBRANE ID: 2, Label: 3, Charge: 0
+    Multiset: <bad>, <c>
+    Internal membranes count: 1
+    Parent membrane ID: 1
+
+    MEMBRANE ID: 1, Label: 2, Charge: 0
+    Multiset: <fg>, <ab>
+    Internal membranes count: 1
+    Parent membrane ID: 0
+
+    SKIN MEMBRANE ID: 0, Label: 1, Charge: 0
+    Multiset: <bad>, <ab>*2
+    Internal membranes count: 1
+
+-----------------------------------------------
+
+    STEP: 1
+
+    Rules selected for MEMBRANE ID: 2, Label: 3, Charge: 0
+    1 * #-1 [<bad> --> <s>, <e>]'3
+
+    Rules selected for SKIN MEMBRANE ID: 0, Label: 1, Charge: 0
+    2 * #-1 [<ab> --> <fg>, <e>]'1
+    1 * #-1 [<bad> --> <cd>, <e>]'1
+
+***********************************************
+
+    CONFIGURATION: 1
+    TIME: 0.138 s.
+    MEMORY USED: 62976
+    FREE MEMORY: 56732
+    TOTAL MEMORY: 932352
+
+    MEMBRANE ID: 3, Label: 4, Charge: 0
+    Multiset: <ab>, <s>, <c>
+    Parent membrane ID: 2
+
+    MEMBRANE ID: 2, Label: 3, Charge: 0
+    Multiset: <c>, <s>, <e>
+    Internal membranes count: 1
+    Parent membrane ID: 1
+
+    MEMBRANE ID: 1, Label: 2, Charge: 0
+    Multiset: <fg>, <ab>
+    Internal membranes count: 1
+    Parent membrane ID: 0
+
+    SKIN MEMBRANE ID: 0, Label: 1, Charge: 0
+    Multiset: <fg>*2, <e>*3, <cd>
+    Internal membranes count: 1
+
+-----------------------------------------------
+
+    STEP: 2
+
+    Rules selected for MEMBRANE ID: 1, Label: 2, Charge: 0
+    1 * #-1 <cd>, <e>[]'2 --> [<cd>]
+
+***********************************************
+
+    CONFIGURATION: 2
+    TIME: 0.149 s.
+    MEMORY USED: 62976
+    FREE MEMORY: 56732
+    TOTAL MEMORY: 932352
+
+    MEMBRANE ID: 3, Label: 4, Charge: 0
+    Multiset: <ab>, <s>, <c>
+    Parent membrane ID: 2
+
+    MEMBRANE ID: 2, Label: 3, Charge: 0
+    Multiset: <c>, <s>, <e>
+    Internal membranes count: 1
+    Parent membrane ID: 1
+
+    MEMBRANE ID: 1, Label: 2, Charge: 0
+    Multiset: <fg>, <ab>, <cd>
+    Internal membranes count: 1
+    Parent membrane ID: 0
+
+    SKIN MEMBRANE ID: 0, Label: 1, Charge: 0
+    Multiset: <fg>*2, <e>*2
+    Internal membranes count: 1
+
+Halting configuration (No rule can be selected to be executed in the next step)

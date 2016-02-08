@@ -1,0 +1,38 @@
+/*This one test the basic evolution, send-in, send-out, and antiport rules*/
+
+@model<evolution_communication>
+
+def main(){
+	@mu = [ []'2 [[]'4]'3 ]'1;
+
+	@ms(1) = a*2,f;
+	@ms(2) = b;
+	@ms(3) = c;
+	@ms(4) = d;
+
+	/*Try these evolution rules*/
+
+	[a]'1 --> [ap]$2;
+
+	[b]'2 --> [bp]$2;
+
+	[c]'3 --> [cp]$3;
+
+	[d]'4 --> [dp]$4;
+
+
+	/*These are send-in rules*/
+	f[]'3$1 --> [f];
+	cp[]'4$2 --> [cp];
+
+	/*These are send-out rules*/
+	/*One on the skin membrane, one not on the skin membrane*/
+	[ap]'1$2 --> ap[];
+	[bp]'2$1 --> bp[];
+
+	/*Last is the antiport*/
+	f[dp]'4$1,$3 --> dp[f];
+
+
+
+}
