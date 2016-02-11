@@ -660,8 +660,8 @@ class CellLikeRule extends AbstractRule {
 				System.out.println("CellLikeRule : updateOuterMultiSet : inside antiport VALID");
 
 				subtractAndAddMultiSet(clnsm,execCount);
-				clnsm.setEnergy(energyIN);
-				clnsm.getParentMembrane().setEnergy(energyOUT);
+				clnsm.setEnergy(energyOUT);
+				clnsm.getParentMembrane().setEnergy(energyIN);
 				setExecutionsDone(execCount);
 			}
 			else{
