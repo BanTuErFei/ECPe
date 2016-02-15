@@ -4,8 +4,8 @@
     CONFIGURATION: 0
     TIME: 0.0 s.
     MEMORY USED: 62976
-    FREE MEMORY: 58685
-    TOTAL MEMORY: 912384
+    FREE MEMORY: 56996
+    TOTAL MEMORY: 932352
 
     MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 0
     Multiset: S
@@ -25,10 +25,10 @@
 ***********************************************
 
     CONFIGURATION: 1
-    TIME: 0.016 s.
+    TIME: 0.008 s.
     MEMORY USED: 62976
-    FREE MEMORY: 58685
-    TOTAL MEMORY: 912384
+    FREE MEMORY: 56668
+    TOTAL MEMORY: 932352
 
     MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 1
     Multiset: S, a, b
@@ -44,19 +44,19 @@
 
     Rules selected for MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 1
     1 * #1 [S]'2 --> [S, a, b]$1
-    1 * #6 [a]'2 --> [ap]$1
     1 * #7 [b]'2 --> [bp]$1
+    1 * #6 [a]'2 --> [ap]$1
 
 ***********************************************
 
     CONFIGURATION: 2
-    TIME: 0.076 s.
+    TIME: 0.014 s.
     MEMORY USED: 62976
-    FREE MEMORY: 58685
-    TOTAL MEMORY: 912384
+    FREE MEMORY: 56668
+    TOTAL MEMORY: 932352
 
     MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 4
-    Multiset: S, a, b, ap, bp
+    Multiset: S, a, b, bp, ap
     Parent membrane ID: 0
 
     SKIN MEMBRANE ID: 0, Label: 1, Charge: 0, Energy: 0
@@ -68,20 +68,20 @@
     STEP: 3
 
     Rules selected for MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 4
+    1 * #7 [b]'2 --> [bp]$1
     1 * #1 [S]'2 --> [S, a, b]$1
     1 * #6 [a]'2 --> [ap]$1
-    1 * #7 [b]'2 --> [bp]$1
 
 ***********************************************
 
     CONFIGURATION: 3
-    TIME: 0.127 s.
+    TIME: 0.019 s.
     MEMORY USED: 62976
-    FREE MEMORY: 58357
-    TOTAL MEMORY: 912384
+    FREE MEMORY: 56668
+    TOTAL MEMORY: 932352
 
     MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 7
-    Multiset: S, a, b, ap*2, bp*2
+    Multiset: S, a, bp*2, ap*2, b
     Parent membrane ID: 0
 
     SKIN MEMBRANE ID: 0, Label: 1, Charge: 0, Energy: 0
@@ -93,20 +93,20 @@
     STEP: 4
 
     Rules selected for MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 7
-    1 * #6 [a]'2 --> [ap]$1
     1 * #1 [S]'2 --> [S, a, b]$1
+    1 * #6 [a]'2 --> [ap]$1
     1 * #7 [b]'2 --> [bp]$1
 
 ***********************************************
 
     CONFIGURATION: 4
-    TIME: 0.171 s.
+    TIME: 0.023 s.
     MEMORY USED: 62976
-    FREE MEMORY: 58357
-    TOTAL MEMORY: 912384
+    FREE MEMORY: 56341
+    TOTAL MEMORY: 932352
 
     MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 10
-    Multiset: S, b, ap*3, bp*3, a
+    Multiset: S, a, bp*3, ap*3, b
     Parent membrane ID: 0
 
     SKIN MEMBRANE ID: 0, Label: 1, Charge: 0, Energy: 0
@@ -118,20 +118,20 @@
     STEP: 5
 
     Rules selected for MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 10
+    1 * #7 [b]'2 --> [bp]$1
     1 * #6 [a]'2 --> [ap]$1
     1 * #1 [S]'2 --> [S, a, b]$1
-    1 * #7 [b]'2 --> [bp]$1
 
 ***********************************************
 
     CONFIGURATION: 5
-    TIME: 0.201 s.
+    TIME: 0.027 s.
     MEMORY USED: 62976
-    FREE MEMORY: 58357
-    TOTAL MEMORY: 912384
+    FREE MEMORY: 56341
+    TOTAL MEMORY: 932352
 
     MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 13
-    Multiset: S, b, ap*4, bp*4, a
+    Multiset: S, bp*4, ap*4, a, b
     Parent membrane ID: 0
 
     SKIN MEMBRANE ID: 0, Label: 1, Charge: 0, Energy: 0
@@ -143,20 +143,20 @@
     STEP: 6
 
     Rules selected for MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 13
-    1 * #1 [S]'2 --> [S, a, b]$1
-    1 * #6 [a]'2 --> [ap]$1
     1 * #7 [b]'2 --> [bp]$1
+    1 * #6 [a]'2 --> [ap]$1
+    1 * #1 [S]'2 --> [S, a, b]$1
 
 ***********************************************
 
     CONFIGURATION: 6
-    TIME: 0.248 s.
+    TIME: 0.032 s.
     MEMORY USED: 62976
-    FREE MEMORY: 58357
-    TOTAL MEMORY: 912384
+    FREE MEMORY: 56341
+    TOTAL MEMORY: 932352
 
     MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 16
-    Multiset: S, b, ap*5, bp*5, a
+    Multiset: S, bp*5, ap*5, a, b
     Parent membrane ID: 0
 
     SKIN MEMBRANE ID: 0, Label: 1, Charge: 0, Energy: 0
@@ -169,19 +169,19 @@
 
     Rules selected for MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 16
     1 * #7 [b]'2 --> [bp]$1
-    1 * #6 [a]'2 --> [ap]$1
     1 * #1 [S]'2 --> [S, a, b]$1
+    1 * #6 [a]'2 --> [ap]$1
 
 ***********************************************
 
     CONFIGURATION: 7
-    TIME: 0.285 s.
+    TIME: 0.035 s.
     MEMORY USED: 62976
-    FREE MEMORY: 58030
-    TOTAL MEMORY: 912384
+    FREE MEMORY: 56341
+    TOTAL MEMORY: 932352
 
     MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 19
-    Multiset: S, ap*6, bp*6, a, b
+    Multiset: S, bp*6, ap*6, a, b
     Parent membrane ID: 0
 
     SKIN MEMBRANE ID: 0, Label: 1, Charge: 0, Energy: 0
@@ -193,20 +193,20 @@
     STEP: 8
 
     Rules selected for MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 19
+    1 * #7 [b]'2 --> [bp]$1
     1 * #6 [a]'2 --> [ap]$1
     1 * #1 [S]'2 --> [S, a, b]$1
-    1 * #7 [b]'2 --> [bp]$1
 
 ***********************************************
 
     CONFIGURATION: 8
-    TIME: 0.321 s.
+    TIME: 0.039 s.
     MEMORY USED: 62976
-    FREE MEMORY: 58030
-    TOTAL MEMORY: 912384
+    FREE MEMORY: 56341
+    TOTAL MEMORY: 932352
 
     MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 22
-    Multiset: S, ap*7, bp*7, b, a
+    Multiset: S, bp*7, ap*7, a, b
     Parent membrane ID: 0
 
     SKIN MEMBRANE ID: 0, Label: 1, Charge: 0, Energy: 0
@@ -225,13 +225,13 @@
 ***********************************************
 
     CONFIGURATION: 9
-    TIME: 0.352 s.
+    TIME: 0.043 s.
     MEMORY USED: 62976
-    FREE MEMORY: 58030
-    TOTAL MEMORY: 912384
+    FREE MEMORY: 56013
+    TOTAL MEMORY: 932352
 
     MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 25
-    Multiset: S, ap*8, bp*8, a, b
+    Multiset: S, bp*8, ap*8, a, b
     Parent membrane ID: 0
 
     SKIN MEMBRANE ID: 0, Label: 1, Charge: 0, Energy: 0
@@ -250,13 +250,13 @@
 ***********************************************
 
     CONFIGURATION: 10
-    TIME: 0.385 s.
+    TIME: 0.046 s.
     MEMORY USED: 62976
-    FREE MEMORY: 58030
-    TOTAL MEMORY: 912384
+    FREE MEMORY: 56013
+    TOTAL MEMORY: 932352
 
     MEMBRANE ID: 1, Label: 2, Charge: 0, Energy: 28
-    Multiset: S, ap*9, bp*9, b, a
+    Multiset: S, bp*9, ap*9, b, a
     Parent membrane ID: 0
 
     SKIN MEMBRANE ID: 0, Label: 1, Charge: 0, Energy: 0
