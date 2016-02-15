@@ -8,7 +8,7 @@ In the Basic Rules folder, we tested the executions of the basic rules:
 
 In the Non-Determinism folder, we tested the Non-Determinism capability of the rules in the case that two (or more) rules can be applied on an object:
 1. ex2.pli - ex2.txt: Maximal Parallelism and Non-Determinism between send-out and antiport - with respect to lack of energy
-2. example.pli - ex.txt : Nondeterminism yielding to either non-halting or halting configuration
+2. example.pli - ex.txt : Nondeterminism yielding to either non-halting or halting configuration. Depends on runtime
 
 
 In the test for Maximal Parallelism, we have tested if all the objects that can be applied will be applied:
