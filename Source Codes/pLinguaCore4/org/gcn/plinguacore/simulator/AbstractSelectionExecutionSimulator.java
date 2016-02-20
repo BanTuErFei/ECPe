@@ -143,7 +143,7 @@ public abstract class AbstractSelectionExecutionSimulator extends AbstractSimula
 		else if(sameConfig){
 			getInfoChannel()
 				.println(
-					"This is a non-halting configuration");
+					"(1) This is a non-halting configuration");
 
 		}
 		else{
@@ -165,7 +165,10 @@ public abstract class AbstractSelectionExecutionSimulator extends AbstractSimula
 	 */
 	private void printInfo(boolean first) {
 		//System.out.println("AbstractSelectionExecutionSimulator (printInfo) : sameConfig " + sameConfig);
-		if ( (hasSelectedRules() || first) && (sameConfig == false)) {
+		System.out.println("(1)hasSelectedRules() == " + hasSelectedRules());
+		System.out.println("sameConfig == " + sameConfig);
+
+		if ( (hasSelectedRules() || first) && (!sameConfig)) {
 			if (!first) {
 				getInfoChannel().println(
 						"-----------------------------------------------");
@@ -178,11 +181,14 @@ public abstract class AbstractSelectionExecutionSimulator extends AbstractSimula
 			Iterator<Pair<ChangeableMembrane, MultiSet<Object>>> it1 = selectedRules
 					.values().iterator();
 
+
+			System.out.println("rules.hasNext() == " + it1.hasNext());			
 			while (it1.hasNext()) {
 				int tempEnergy=0, tempParentEnergy=0;
 				Pair<ChangeableMembrane, MultiSet<Object>> pair = it1.next();
 				MultiSet<Object> rules = pair.getSecond();
 				Iterator<Object> it = rules.entrySet().iterator();
+				System.out.println("pair.toString() = " + pair.toString());	
 				if (it.hasNext()) {
 					getInfoChannel().println();
 					getInfoChannel().println(
@@ -240,7 +246,9 @@ public abstract class AbstractSelectionExecutionSimulator extends AbstractSimula
 				}
 
 			} 
-			else if(!hasSelectedRules()){
+
+			//This marks the end of the conditional if(hasSelectedRules() && !sameConfig chuchu)
+			else if(!hasSelectedRules() || emptyMultiSet()){	//emptyMultiSet - bacause elements in selectedRules cannot be removed, it has to be checked this way
 
 				getInfoChannel()
 						.println(
@@ -248,9 +256,107 @@ public abstract class AbstractSelectionExecutionSimulator extends AbstractSimula
 
 			}
 			else if(sameConfig){
+
+
 				getInfoChannel()
 						.println(
 								"This is a non-halting configuration");
+				System.out
+						.println(
+								"This is a non-halting configuration");
+
+				System.out.println("(2)hasSelectedRules() == " + hasSelectedRules());
+
+				//We just gonna print what's after the configuration
+
+				if (!first) {
+					getInfoChannel().println(
+							"-----------------------------------------------");
+					getInfoChannel().println();
+					getInfoChannel().println(
+							"    STEP: " + currentConfig.getNumber());
+					System.out.println("\nAbstractExecutionSimulator : STEP " + currentConfig.getNumber());
+
+				}		
+
+
+				Iterator<Pair<ChangeableMembrane, MultiSet<Object>>> it1 = selectedRules
+					.values().iterator();
+
+				
+			System.out.println("(2) rules.hasNext() == " + it1.hasNext());	
+				while (it1.hasNext()) {
+					/*getInfoChannel().println("hasSelectedRules()");*/
+					System.out.println("inside rules.hasNext()");	
+					int tempEnergy=0, tempParentEnergy=0;
+					Pair<ChangeableMembrane, MultiSet<Object>> pair = it1.next();
+
+					System.out.println("pair.toString() = " + pair.toString());	
+					MultiSet<Object> rules = pair.getSecond();
+					Iterator<Object> it = rules.entrySet().iterator();
+
+					System.out.println("rules.entrySet.hasNext() == " + it.hasNext());	
+					if (it.hasNext()) {
+						//System.out.println("inside rules.entrySet.hasNext()");
+						getInfoChannel().println();
+						getInfoChannel().println(
+								"    Rules selected for "
+										+ getHead(pair.getFirst()));
+
+						System.out.println();
+						System.out.println(
+								"    Rules selected for "
+										+ getHead(pair.getFirst()));
+
+						while (it.hasNext()) {
+							Object r = it.next();
+							getInfoChannel().println(
+									"    " + rules.count(r) + " * " + r.toString());	//JM: this toString implements everything HAHAHAHA
+
+							System.out.println(
+								"    " + rules.count(r) + " * " + r.toString());
+
+						}
+					}
+				}
+				getInfoChannel().println();
+				getInfoChannel().println(
+						"***********************************************");
+				getInfoChannel().println();
+				getInfoChannel().println(
+						"    CONFIGURATION: " + (currentConfig.getNumber()));
+				if (isTimed()) {
+					getInfoChannel().println("    TIME: " + getTime() + " s.");
+					getInfoChannel().println(
+							"    MEMORY USED: "
+									+ Runtime.getRuntime().totalMemory() / 1024);
+					getInfoChannel().println(
+							"    FREE MEMORY: " + Runtime.getRuntime().freeMemory()
+									/ 1024);
+					getInfoChannel().println(
+							"    TOTAL MEMORY: " + Runtime.getRuntime().maxMemory()
+									/ 1024);
+				}
+				getInfoChannel().println();
+
+
+
+				//System.out.println("AbstractSelectionExecutionSimulator : printInfo :: after Config");
+
+				
+
+				Iterator<? extends Membrane> it = currentConfig.getMembraneStructure().getAllMembranes()
+							.iterator();
+					while (it.hasNext())
+						printInfoMembrane((ChangeableMembrane)it.next());
+					if (!currentConfig.getEnvironment().isEmpty()) {
+						getInfoChannel().println(
+								"    ENVIRONMENT: " + currentConfig.getEnvironment());	//JM: environment
+						getInfoChannel().println();
+					}
+
+				//End of printing
+
 			}
 			else{
 				getInfoChannel()
@@ -262,6 +368,20 @@ public abstract class AbstractSelectionExecutionSimulator extends AbstractSimula
 		
 		configurationPrev = (CellLikeConfiguration)currentConfig.clone();	//JM: Added for trap symbol
 
+
+	}
+
+	public boolean emptyMultiSet(){
+		Iterator<Pair<ChangeableMembrane, MultiSet<Object>>> iter = selectedRules
+			.values().iterator();
+
+		while(iter.hasNext()){
+			Pair<ChangeableMembrane,MultiSet<Object>> p1 = iter.next();
+			if(p1.getSecond().size()!=0){
+				return false;
+			}
+		}
+		return true;
 
 	}
 
@@ -381,13 +501,29 @@ public abstract class AbstractSelectionExecutionSimulator extends AbstractSimula
 					new HashMultiSet<Object>());
 
 			tempPair = selectedRules.get(m.getId());
-
+			System.out.println("PUTSELECTEDRULES = " + tempPair.toString() + " with count " + count);
+			
 			MultiSet<Object> tempMulti = tempPair.getSecond();
 
+			System.out.println("tempMulti = " + tempMulti.toString());
 			tempMulti.remove(r,count);
-			
+			System.out.println("tempMulti (after removal) = " + tempMulti.toString());
+			System.out.println("tempMulti (after removal) count = " + tempMulti.size());
+
+
+			//We should remove the pair altogether if the multiSet of object is already empty
+			if(tempMulti.size() == 0){
+				//we need to remove tempPair to selectedRules
+				System.out.println("tempMulti size == 0");
+				//selectedRules.keySet().remove((Object)(m.getId()));
+
+			}
+
+
 			if(selectedRules.containsKey(m.getId())){	//JM: Of course it contains it
 				selectedRules.put(m.getId(),tempPair);
+
+				System.out.println("putSelectedRules (after executionsDone) = " + tempPair.toString());
 			}
 			else{
 				Pair<ChangeableMembrane, MultiSet<Object>> tempPair2 = new Pair<ChangeableMembrane, MultiSet<Object>>(m,

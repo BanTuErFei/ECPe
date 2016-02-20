@@ -230,7 +230,7 @@ public abstract class AppSimulator {
 					else
 						sim.run();
 				}
-				printSimulationInfo(sim);
+				//printSimulationInfo(sim);
 			} catch (Exception ex) {
 				System.out.println(ex.getMessage());
 			}
@@ -246,8 +246,9 @@ public abstract class AppSimulator {
 				+ sim.getCurrentConfig().getEnvironment());
 		System.out.println("Steps: " + sim.getCurrentConfig().getNumber());
 		System.out.println("Time: " + sim.getTime() / 1000 + " s.");
-		System.out
+		/*System.out
 				.println("Halting configuration (No rule can be selected to be executed in the next step)");
+		*/
 	}
 
 }

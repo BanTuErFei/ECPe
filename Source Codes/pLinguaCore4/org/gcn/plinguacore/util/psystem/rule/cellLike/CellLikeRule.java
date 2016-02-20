@@ -210,10 +210,10 @@ class CellLikeRule extends AbstractRule {
 				//JM: like a send-in I guess
 				//we have to account for the antiport though hahahaha - antiport: if there is energy in the righthandrule
 
-				if(getRightHandRule().getOuterRuleMembrane().getEnergy()!=0 && getLeftHandRule().getMultiSet().size()!=0){ //means this is an antiport
+				if(getLeftHandRule().getOuterRuleMembrane().getEnergy()!=0 && getLeftHandRule().getOuterRuleMembrane().getEnergy2()!=0){ //means this is an antiport
 					//System.out.println("CellLikeRule : countExecutions --> inside an antiport");
 
-					if(cellLikeNoSkinMembrane.getParentMembrane().getEnergyTemp() < getRightHandRule().getOuterRuleMembrane().getEnergy()){	//energy of the parent is the righthandrule
+					if(cellLikeNoSkinMembrane.getParentMembrane().getEnergyTemp() < getLeftHandRule().getOuterRuleMembrane().getEnergy()){	//energy of the parent is the righthandrule
 						outerMultiSetCount = 0;
 						//isExecuted = false;
 						//System.out.println("Parent energy < RightHand energy");
@@ -226,7 +226,7 @@ class CellLikeRule extends AbstractRule {
 						
 						//System.out.println("CellLikeRule : countExecutions --> for antiport");
 						int execCount;
-						execCount = (int)((cellLikeNoSkinMembrane.getParentMembrane().getEnergyTemp())/(getRightHandRule().getOuterRuleMembrane().getEnergy()));
+						execCount = (int)((cellLikeNoSkinMembrane.getParentMembrane().getEnergyTemp())/(getLeftHandRule().getOuterRuleMembrane().getEnergy()));
 						execCount = Math.min((int)outerMultiSetCount,execCount);
 
 						outerMultiSetCount = execCount;						
@@ -287,8 +287,8 @@ class CellLikeRule extends AbstractRule {
 
 		//System.out.println("innerMultiSetCount before: = " + innerMultiSetCount + " lefthand rule outermem = " + getLeftHandRule().getOuterRuleMembrane().getMultiSet().toString() + " membrane = " + cellLikeMembrane.getMultiSet().toString());
 		
-		if(getRightHandRule().getOuterRuleMembrane().getEnergy()!=0 && getLeftHandRule().getMultiSet().size()!=0){ //means this is an antiport
-			if(cellLikeMembrane.getEnergyTemp() < getLeftHandRule().getOuterRuleMembrane().getEnergy()){
+		if(getLeftHandRule().getOuterRuleMembrane().getEnergy()!=0 && getLeftHandRule().getOuterRuleMembrane().getEnergy2()!=0){ //means this is an antiport
+			if(cellLikeMembrane.getEnergyTemp() < getLeftHandRule().getOuterRuleMembrane().getEnergy2()){
 				innerMultiSetCount = 0;
 				//isExecuted = false;
 				//System.out.println("membrane energy < lefthand energy");
@@ -300,7 +300,7 @@ class CellLikeRule extends AbstractRule {
 				isAntiport = true;
 				
 				int execCount;
-				execCount = (int)((cellLikeMembrane.getEnergyTemp())/(getLeftHandRule().getOuterRuleMembrane().getEnergy()));
+				execCount = (int)((cellLikeMembrane.getEnergyTemp())/(getLeftHandRule().getOuterRuleMembrane().getEnergy2()));
 				execCount = Math.min((int)innerMultiSetCount,execCount);
 
 				innerMultiSetCount = execCount;
